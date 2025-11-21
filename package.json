@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "fonts:copy": "cp -r node_modules/bootstrap-icons/font/fonts public/fonts/bootstrap-icons",
+    "sass:build": "sass --no-source-map --style=compressed assets/scss/main.scss:public/css/styles.css",
+    "sass:watch": "sass --watch --no-source-map assets/scss/main.scss:public/css/styles.css",
+    "js:build": "vite build",
+    "js:watch": "vite build --watch",
+    "php:serve": "php -S localhost:80 -t public",
+    "browser:sync": "browser-sync start --proxy localhost:80 --open \"local\" --files \"public/**/*.php, templates/**/*.php, assets/js/**/*.js, assets/scss/**/*.scss\"",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run js:watch\" \"npm run php:serve\" \"npm run browser:sync\"",
+    "prod": "npm run fonts:copy && npm run sass:build && npm run js:build"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "sass": "1.77.6",
+    "vite": "^7.2.0"
+  }
+}

@@ -1,0 +1,12 @@
+// переопределение переменных Bootstrap
+$primary: red;
+
+// подключение Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// подключение bootstrap-icons
+$bootstrap-icons-font-dir: "../fonts/bootstrap-icons";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons";
+
+// 4. подключение кастомных стилей
+@import "styles";
